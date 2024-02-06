@@ -18,15 +18,10 @@ function toggleMenu(){
 menuItems.addEventListener("click", toggleMenu); //Wacht tot er op de constante menuItems geklikt word en roept daarna de functie toggleMenu op
 
 
-async function siteInfo(){
-    const siteJson = "https://github.com/maxstrikkers/web-app-from-scratch-2324/blob/main/docs/files/app.json" //Maakt van het JSON bestand een constante
-    fetch(siteJson)
-        .then(response => {
-            if (response.ok){
-                console.log(siteJson.json())
-            }
-        })
-        console.log(siteJson)
-}
+async function siteInfo() {
+    const response = await fetch("./files/siteInfo.json");
+    const siteJson = await response.json();
+    document.getElementById('namePlaceholder').innerText = siteJson.name;
+  }
 
 siteInfo()
