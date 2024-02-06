@@ -19,15 +19,15 @@ menuItems.addEventListener("click", toggleMenu); //Wacht tot er op de constante 
 
 
 async function siteInfo(){
-    const siteInfo = "./files/app.json" //Maakt van het JSON bestand een constante
+    const siteInfo = "https://github.com/maxstrikkers/web-app-from-scratch-2324/blob/main/docs/files/app.json" //Maakt van het JSON bestand een constante
 
     fetch(siteInfo)
         .then(response => {
-            if (!response.ok){
-                throw new Error ("niet goed")
+            if (response.ok){
+                console.log(siteInfo.json())
             }
         })
-    console.log(siteInfo)
+        console.log(siteInfo)
 }
 
 siteInfo()
