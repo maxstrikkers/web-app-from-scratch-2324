@@ -1,0 +1,12 @@
+{
+    "name": "Max",
+    "dateOfBirth": {
+        "year" : 2000,
+        "month" : 4,
+        "day" : 8
+    },
+    "birthPlace": "Amstelveen",
+    "pets": ["Kat", "Hond"],
+    "avatar": "www.linktoavatar.com",
+    "openForJobProposals" : false
+}
