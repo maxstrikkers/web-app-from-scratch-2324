@@ -4,11 +4,8 @@ body{
     font-family: 'Arial', sans-serif;
 }
 
-h1{
-    color: white;
-}
 
-p{
+.white{
     color: white;
 }
 
@@ -37,6 +34,7 @@ p{
     border-radius: 5px;
     transition: 0.3s ease;
 }
+
 
 .navBar{
     background-color: #3E2F5B;
@@ -99,3 +97,40 @@ p{
     padding: 50px;
     float: right;
 }
+
+.dropDownArrow{
+    max-width: 3%;
+    margin-left: auto;
+}
+
+.dropDownContainer {
+    padding: 15px;
+    max-width: 20%;
+    border-radius: 5px;
+    margin: auto;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .dropDownContent {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    max-height: 0;
+    background-color: purple;
+    padding: 10px;
+    transition: 0.3s ease-out;
+    overflow: hidden;
+  }
+
+  .dropDownContainer.open .dropDownContent {
+    visibility: visible;
+    max-height: 40000px;
+  }
+  
+  .patatMetLange{
+    max-width: 50%;
+  }

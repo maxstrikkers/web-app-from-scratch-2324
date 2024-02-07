@@ -17,11 +17,30 @@ function toggleMenu(){
 
 menuItems.addEventListener("click", toggleMenu); //Wacht tot er op de constante menuItems geklikt word en roept daarna de functie toggleMenu op
 
-
-async function siteInfo() {
-    const response = await fetch("./files/siteInfo.json");
-    const siteJson = await response.json();
-    document.getElementById('namePlaceholder').innerText = siteJson.name;
+async function siteInfo() { //Functie die de JSON file gaat ophalen en waardes gaat veranderen
+    const response = await fetch("./files/siteInfo.json"); //Maakt de variabele response aan door het JSON bestand te fetchen (en te wachten tot het binnen is doormiddel van await)
+    const siteJson = await response.json(); //Zet het JSON bestand wat binnen komt als text om naar een JSON
+    document.getElementById('namePlaceholder').innerText = siteJson.name; //Zoekt het element met de Id namePlaceholder op en past de waarde aan gebaseerd op wat er in de variabele siteJson staat met de key (idk of het ook zo heet in JSON) name
   }
 
-siteInfo()
+siteInfo() //Voert de functie uit
+
+const playButton = document.getElementById("playButton");
+const pauzeButton = document.getElementById("pauzeButton")
+const meerVreten = document.getElementById("meerVreten")
+
+function playAudio(){
+    meerVreten.currentTime = 8;
+    meerVreten.play();
+    }
+
+function pauzeAudio(){
+    meerVreten.pause()
+}
+
+playButton.addEventListener("click", playAudio);
+pauzeButton.addEventListener("click", pauzeAudio)
+
+document.querySelector(".dropDownContainer").addEventListener("click", function(){
+    this.classList.toggle("open");
+});
