@@ -1,12 +1,11 @@
-{
-    "name": "Max",
-    "dateOfBirth": {
-        "year" : 2000,
-        "month" : 4,
-        "day" : 8
-    },
-    "birthPlace": "Amstelveen",
-    "pets": ["Kat", "Hond"],
-    "avatar": "www.linktoavatar.com",
-    "openForJobProposals" : false
+{ 
+    "firstName": "Max",
+    "lastName": "Strikkers",
+    "avatar_url": "https://raw.githubusercontent.com/maxstrikkers/web-app-from-scratch-2324/main/docs/files/img/Max%20Strikkers.png",
+    "age": 23,
+    "city": "Amstelveen",
+    "hobbies" : ["Films", "Music"],
+    "truthsAndLies" : ["Ik ben half Braziliaans", "Ik ben geboren als meisje", "Ik heb een hond en een kat"],
+    "bio" : "Welkom op mijn pagina! Mijn naam is Max Strikkers, 23 jaar oud, uit Amstelveen. Ik volg de opleiding ICT Cybersecurity aan de HvA en wilde met deze minor mijn horizon verbreden, vooral door JavaScript te leren. Hier laat ik mijn favoriete playlist zien van mijn favoriete genre: techno. Een playlist voor de tedere oortjes en een wat grimmigere playlist.",
+    "favouriteAnimal" : "Hond"
 }

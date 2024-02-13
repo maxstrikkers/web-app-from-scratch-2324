@@ -9,7 +9,9 @@
     <title>Max Strikkers</title>
 </head>
 <body>
-    <div class="navBar">
+
+<!-- Header -->
+    <header>
         <div class="menuIcon">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -20,33 +22,45 @@
             <a href="#" class="menuItem">Films</a>
             <a href="#" class="menuItem">Eten</a>
         </nav>
-    </div>
-    <div class="aboutMeContainer">
-        <div class="links">
-            <h1 id="namePlaceholder" class="white">Naam</h1>
-            <img class="profielFoto" src="./files/img/Max Strikkers.png" alt="profielfoto">
-        </div>
-        <div class="rechts">
-            <h1>Over mij</h1>
-            <p class="white"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque lorem, pharetra id placerat quis, placerat ac massa. Pellentesque sollicitudin congue nisi, in finibus erat scelerisque eget. Cras id lorem vel tellus placerat eleifend a non erat. Fusce iaculis lacus non massa mollis gravida. Maecenas placerat odio a bibendum tristique. Aliquam eget felis sed arcu bibendum porta ac eget velit. Etiam euismod tellus consectetur, condimentum dui sit amet, commodo sapien. Aliquam erat volutpat. Curabitur tempus, purus id congue pulvinar, leo lectus tincidunt metus, eu lacinia ligula enim et tortor. Curabitur sed libero a libero ultricies tincidunt. Vivamus at odio eget dui ultricies hendrerit in eu urna. Aliquam efficitur enim quam, eu egestas ligula dignissim at. Duis bibendum tincidunt facilisis. Vivamus finibus suscipit lorem vel porttitor. Phasellus eget eros justo. Suspendisse scelerisque, eros vitae egestas volutpat, enim purus suscipit elit, et tempor turpis leo ut arcu. Ut vehicula mi a odio ornare, nec efficitur massa suscipit. Phasellus fringilla sapien ac enim varius convallis. Nam eu facilisis urna. Fusce pharetra diam vitae maximus luctus. Integer sed posuere neque. Nullam quis sagittis augue. Nam id enim a nunc feugiat placerat. Vestibulum id dictum nulla. Integer sem sapien, semper et convallis a, elementum non nulla. Donec consectetur tortor eu mollis dapibus. Aliquam vulputate massa metus, sed ultrices metus tincidunt nec. Sed venenatis, est nec auctor laoreet, orci erat accumsan velit, eu blandit justo nulla iaculis nisl. Sed vestibulum dapibus dui, id tincidunt eros mattis et. Aenean pulvinar quam elit, non commodo ipsum egestas et. Quisque sagittis pretium sodales. Sed cursus nisl ut ipsum blandit, quis gravida augue consequat. Fusce at dui accumsan, tincidunt risus ut, maximus eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis nisi eget quam venenatis maximus ac in lacus. Duis ut ex pulvinar, facilisis neque in, placerat sapien. </p>
-        </div>
-    </div>
-    <div class ="dropDownContainer">
-        <p class="white"> Favorite eten</p>
-        <img class="dropDownArrow" src="./files/img/arrow.png" alt="dropDownArrow">
-        <div class="dropDownContent">
-            <h3 class="white">Patat</h3>
-            <img class="patatMetLange" src="./files/img/patatMetLange.jpeg">
-            <button id="playButton">Speel audio af</button>
-            <button id="pauzeButton">Pauzeer audio</button>
-            <audio id="meerVreten">
-                <source src="./files/audio/meerVreten.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-    </div>
+    </header>
 
- 
-    </div>
+    <main>
+<!-- section 1  (About me)-->
+        <section class="aboutMeContainer">
+            <div class="nameAndProfile">
+                <h1 id="namePlaceholder"></h1>
+                <img class="profielFoto" id="profielFoto" src="" alt="profielfoto">
+            </div>
+            <div class="aboutMe">
+                <h2>Over mij</h2>
+                <p id="aboutMeInformation"></p>
+            </div>
+        </section>
+
+
+
+    <!-- Section 3 (Muziek) -->
+        <section class="musicContainer" id="musicContainer">
+            <!-- de selector voor de playlist -->
+            <section class="musicSelectorContainer">
+                <h2>Kies een playlist</h2>
+                <input type="radio" id="musicSelectorMinderGrimmig" name="tabs" />
+                <label class="tab" for="musicSelectorMinderGrimmig">Voor de tedere oortjes  &#x1F423;</label>
+                <input type="radio" id="musicSelectorGrimmig" name="tabs" />
+                <label class="tab" for="musicSelectorGrimmig">Grimmig &#128128;</label>
+                <span class="glider"></span>
+            </section>
+        <!-- De playlist met nummers (Ingeladen via JavaScript) -->
+            <section>
+            <h2 id="playlistName"></h2>
+            <img class="playlistCover" id="playlistCover" src="" alt="playlist cover">
+            <ul id="songList"></ul>
+            <div class="waas"></div>
+            </section>
+        </section>
+    </main>
+
     <script src="./files/script.js"></script>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
 </body>
 </html>
