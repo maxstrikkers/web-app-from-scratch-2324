@@ -141,7 +141,7 @@ header{
   margin: auto; /* Centreert de header horizontaal */
   padding: 15px;
   margin-top: 15px;
-  position: relative; /* Zorgt ervoor dat de positie van de header relatief is aan de oudercontainer */
+  position: relative; /* Zorgt ervoor dat de positie van de header relatief is aan de partent container */
   z-index: 1;
 }
 
@@ -193,3 +193,6 @@ header{
   background-color: var(--color--background-containers);
 }
 ```
+
+## Derde versie (Het inladen van de playlist):
+Ik wilde gebruik maken van de SoundCloud API om zo mijn favoriete afspeellijst in te laden. Alleen, daarvoor moest je een ontwikkelaar zijn en namen ze niemand meer aan. Ik heb verder ook geen Spotify, maar gebruik Apple Music, waarvoor je €100 per jaar moet betalen om toegang te krijgen tot de API. Dus heb ik via RapidAPI.com een SoundCloud API ingesteld. Omdat ik maar 50 verzoeken per maand heb (gratis), heb ik de dataset gekopieerd die zij als testdata kregen en die in mijn app gebruikt om nummers van mijn afspeellijst in te laden.
