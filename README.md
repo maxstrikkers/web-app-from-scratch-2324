@@ -16,7 +16,7 @@ Toen ik hiermee begon, wist ik niet wat semantiek was en waarom het belangrijk w
     <div><a href="muziek.html">Muziek</a></div>
     <div><a href="eten.html">Eten</a></div>
 </div>
-<div class="hamburger">
+<div class="menuIcon">
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
@@ -69,4 +69,25 @@ Hier heb ik aan Co-Pilot gevraagd hoe ik iets kan selecteren op basis van een ID
 `document.querySelector('.nav-toggle').addEventListener('click', function() {
     document.querySelector('.navBar').classList.toggle('change');
 `});
+```
+
+## Tweede versie
+### Menu
+
+
+#### HTML:
+Ik wilde de semantiek beter maken door onder andere <header> te gebruiken om aan te tonen dat het om de header gaat en <nav> om aan te tonen dat het om een navigatie gaat.
+```
+<header>
+    <div class="menuIcon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="menu hidden">
+        <a href="muziek.html" class="menuItem">Muziek</a>
+        <a href="#" class="menuItem">Films</a>
+        <a href="#" class="menuItem">Eten</a>
+    </nav>
+</header>
 ```
