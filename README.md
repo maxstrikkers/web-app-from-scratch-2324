@@ -7,5 +7,5 @@ Ik wilde met mijn persoonlijke app vooral dingen uitproberen op het gebied van J
 ### Menu
 Ik wilde eerst een menu bar maken die uiteindelijk zou gaan linken naar mijn home pagine, muziek en favorite eten dat menu item zag er als volgd uit
 
------------------------------- HTML ------------------------------
+------------------------------------------------------------ HTML ------------------------------------------------------------
 
