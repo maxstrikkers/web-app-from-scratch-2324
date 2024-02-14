@@ -76,7 +76,7 @@ Hier heb ik aan Co-Pilot gevraagd hoe ik iets kan selecteren op basis van een ID
 
 
 #### HTML:
-Ik wilde de semantiek beter maken door onder andere <header> te gebruiken om aan te tonen dat het om de header gaat en <nav> om aan te tonen dat het om een navigatie gaat.
+Ik wilde de semantiek beter maken door onder andere ```<header>``` te gebruiken om aan te tonen dat het om de header gaat en ```<nav>``` om aan te tonen dat het om een navigatie gaat.
 ```
 <header>
     <div class="menuIcon">
