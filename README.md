@@ -71,6 +71,23 @@ Hier heb ik aan Co-Pilot gevraagd hoe ik iets kan selecteren op basis van een ID
 `});
 ```
 
+### Over mij container
+
+#### HTML:
+```
+ <div class="aboutMeContainer">
+        <div class="links">
+            <h1>Max Strikkers</h1>
+            <img class="profielFoto" src="./files/img/Max Strikkers.png" alt="profielfoto">
+        </div>
+        <div class="rechts">
+            <h1>Over mij</h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque lorem, pharetra id placerat quis, placerat ac massa.</p>
+        </div>
+    </div>
+```
+
+
 ## Tweede versie
 ### Menu
 

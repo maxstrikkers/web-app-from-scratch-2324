@@ -18,7 +18,7 @@ function toggleMenu(){
 menuItems.addEventListener("click", toggleMenu); //Wacht tot er op menuItems geklikt word en roept daarna de functie toggleMenu op
 
 async function siteInfo() { //Functie die de JSON file gaat ophalen en waardes gaat veranderen
-    const response = await fetch("./files/siteInfo.json"); //Maakt de variabele response aan door het JSON bestand te fetchen (en te wachten tot het binnen is doormiddel van await)
+    const response = await fetch("./files/info.json"); //Maakt de variabele response aan door het JSON bestand te fetchen (en te wachten tot het binnen is doormiddel van await)
     const siteJson = await response.json(); //Zet het JSON bestand wat binnen komt als text om naar een JSON
     document.getElementById('namePlaceholder').innerText = siteJson.firstName + ' ' + siteJson.lastName; //Zoekt het element met de Id namePlaceholder op en past de waarde aan gebaseerd op wat er in de variabele siteJson staat met de key (idk of het ook zo heet in JSON) name
     document.getElementById('aboutMeInformation').innerText = siteJson.bio;
