@@ -72,8 +72,10 @@ Hier heb ik aan Co-Pilot gevraagd hoe ik iets kan selecteren op basis van een ID
 ```
 
 ### Over mij container
+Ik wilde een container maken met daarin informatie over mezelf ik wilde links mijn foto en mijn naam en rechts de text over mij met daaronder wat dingen over mij. Deze versie heeft nog dummy text.
 
 #### HTML:
+Ik ben gaan werken met divs. Ik kwam er al snel achter dat er een veel betere manier is om dit te doen zodat het semantischer is. Een grote struggle voor mij was altijd om items op de juiste plek te krijgen met CSS. Ik ging het vaak opzoeken en plakte alles erin zonder dat ik precies wist waar het over ging. Dat is hier ook het geval geweest. Ik vroeg namelijk aan Co-Pilot het volgende: "Maak een container waarin informatie over mij komt. In die container moeten nog 2 containers zitten (Links en rechts) en op basis daarvan moet alles gesorteerd worden." Dit was het resultaat in HTML en CSS.
 ```
  <div class="aboutMeContainer">
         <div class="links">
@@ -86,7 +88,24 @@ Hier heb ik aan Co-Pilot gevraagd hoe ik iets kan selecteren op basis van een ID
         </div>
     </div>
 ```
+#### CSS:
+```
+.aboutMeContainer{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: auto;
+}
 
+.links{
+    align-items: center;
+    padding: 50px;
+}
+
+.rechts{
+    padding: 50px;
+    float: right;
+```
 
 ## Tweede versie
 ### Menu
