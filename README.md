@@ -327,3 +327,24 @@ updatePlaylist()
 ```
 
 ## Vierde versie (Het managen van de pop-up):
+Ik wilde dus een popup maken die als je op het liedje klikt naar boven komt om zo de Soundcloud widget te kunnen gebruiken. Daar om hheen wide ik een waas maken die het hele scherm blurde zodat de popup goed tot zijn recht kwam. Dat heb ik als volgt gedaan:
+
+### HTML: 
+De ```<div>``` waas is toegevoegd aan de ul en hoe uiteindelijk de popup (bevind zich in de li) er uit ziet
+
+```
+<div class="musicplayerPopup">
+    <button class="closeMusicPopup">
+        <svg width="2rem" height="2rem" viewBox="0 0 15 15">
+            <path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27">
+            </path>
+        </svg>
+    </button>
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1636040247&amp;sharing=false&amp;color=%230e1321&amp;">
+    </iframe>
+</div>
+```
+
+```
+<div class="waas"></div>
+```
