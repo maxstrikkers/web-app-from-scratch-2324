@@ -197,7 +197,29 @@ header{
 ## Derde versie (Het inladen van de playlist):
 Ik wilde gebruik maken van de SoundCloud API om zo mijn favoriete afspeellijst in te laden. Alleen, daarvoor moest je een ontwikkelaar zijn en namen ze niemand meer aan. Ik heb verder ook geen Spotify, maar gebruik Apple Music, waarvoor je €100 per jaar moet betalen om toegang te krijgen tot de API. Dus heb ik via RapidAPI.com een SoundCloud API ingesteld. Omdat ik maar 50 verzoeken per maand heb (gratis), heb ik de dataset gekopieerd die zij als testdata kregen en die in mijn app gebruikt om nummers van mijn afspeellijst in te laden.
 
+### HTML
+```
+<li class="songContainer toggleMusicPopup">
+    <div class="song">
+        <div>
+            <h3>Vendex @ Wonderland Festival Indoor 2023</h3>
+            <p>Wonderland Festival</p>
+        </div>
+        <img class="songCover" src="https://i1.sndcdn.com/artworks-VPMVzyfb7H9aCyoe-k4RpGw-original.jpg" alt="song cover">
+    </div>
+    <div class="musicplayerPopup">
+        <button class="closeMusicPopup">
+            <svg width="2rem" height="2rem" viewBox="0 0 15 15">
+                <path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"></path>
+            </svg>
+        </button>
+        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1695085485&amp;sharing=false&amp;color=%230e1321&amp;"></iframe>
+    </div>
+</li>
+```
+
 ### JavaScript
+Voor deze JavaScript ben ik eerst een structuurtje gaan maken in HTML over hoe uiteindelijk de list met songs er uit komt te zien
 ```
 async function siteInfo() { //Functie die de JSON file gaat ophalen en waardes gaat veranderen
     const response = await fetch("./files/info.json"); //Maakt de variabele response aan door het JSON bestand te fetchen (en te wachten tot het binnen is doormiddel van await)
