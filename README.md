@@ -91,3 +91,69 @@ Ik wilde de semantiek beter maken door onder andere ```<header>``` te gebruiken 
     </nav>
 </header>
 ```
+
+#### CSS: 
+Ook heb ik de CSS helemaal omgegooid onder andere om het netter te maken en ik maak gebruik van variabele voor de kleur (Ik wist niet dat dat kon) Ook ben ik gaan onderzoeken hoe een flexbox werkt en dat heb ik gedaan met behulp van deze site: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+```
+/* HEAD */
+header{
+  background-color: var(--color--background-containers);
+  border-radius: 5px;
+  max-width: 95%;
+  height: 200%;
+  margin: auto; /* Centreert de header horizontaal */
+  padding: 15px;
+  margin-top: 15px;
+  position: relative; /* Zorgt ervoor dat de positie van de header relatief is aan de oudercontainer */
+  z-index: 1;
+}
+
+.menuIcon{
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bar{
+  background-color: var(--color-text);
+  width: 30px;
+  height: 3px;
+  transition: transform 0.3s ease;
+  }
+
+.menuIcon.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuIcon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuIcon.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden{
+  position: absolute;
+  opacity: 0;
+  top: -100%;
+  transition: 0.4s ease;
+} 
+
+.shown{
+  position: absolute;
+  opacity: 1;
+  top: 100%;
+  transition: 0.4s ease;
+  background-color: var(--color--background-containers);
+}
+```
