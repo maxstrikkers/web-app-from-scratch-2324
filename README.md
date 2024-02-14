@@ -196,3 +196,108 @@ header{
 
 ## Derde versie (Het inladen van de playlist):
 Ik wilde gebruik maken van de SoundCloud API om zo mijn favoriete afspeellijst in te laden. Alleen, daarvoor moest je een ontwikkelaar zijn en namen ze niemand meer aan. Ik heb verder ook geen Spotify, maar gebruik Apple Music, waarvoor je €100 per jaar moet betalen om toegang te krijgen tot de API. Dus heb ik via RapidAPI.com een SoundCloud API ingesteld. Omdat ik maar 50 verzoeken per maand heb (gratis), heb ik de dataset gekopieerd die zij als testdata kregen en die in mijn app gebruikt om nummers van mijn afspeellijst in te laden.
+
+### JavaScript
+```
+async function siteInfo() { //Functie die de JSON file gaat ophalen en waardes gaat veranderen
+    const response = await fetch("./files/info.json"); //Maakt de variabele response aan door het JSON bestand te fetchen (en te wachten tot het binnen is doormiddel van await)
+    const siteJson = await response.json(); //Zet het JSON bestand wat binnen komt als text om naar een JSON
+    document.getElementById('namePlaceholder').innerText = siteJson.firstName + ' ' + siteJson.lastName; //Zoekt het element met de Id namePlaceholder op en past de waarde aan gebaseerd op wat er in de variabele siteJson staat met de key (idk of het ook zo heet in JSON) name
+    document.getElementById('aboutMeInformation').innerText = siteJson.bio;
+    document.getElementById('profielFoto').src = siteJson.avatar_url;
+  }
+
+siteInfo() //Voert de functie uit 
+
+// Functie om alle items uit de json file toe te voegen aan de pagina
+async function updatePlaylist(){
+    const response = await fetch("./files/playlistInfo.json");
+    const playlistInfoJSON = await response.json();
+
+    // Voegt de naam van de playlist toe aan de html
+    document.getElementById("playlistName").innerText = playlistInfoJSON.name;
+
+    // Voegt de src toe aan de image (de cover van de playlist)
+    const img = document.getElementById("playlistCover");
+    img.src = playlistInfoJSON.playlistCoverUrl;
+
+    playlistInfoJSON.tracks.items.forEach(element => {
+        const songName = element.title;
+        const artistName = element.user.name;
+        const albumCoverUrl = element.artworkUrl;
+        const songList = document.getElementById('songList')
+        const songId = element.id;
+
+    
+        // Maakt het list item aan die uiteindelijk de song gaat bevatten en voegt een classnaam toe
+        const songContainer = document.createElement("li");
+        songContainer.classList.add('songContainer', 'toggleMusicPopup');
+        
+        // Maakt de div aan die de song gaat bevatten en voegt een classnaam toe
+        const song = document.createElement("div");
+        song.classList.add('song');
+        
+        // Maakt de div aan waar de titel en artiest in komen te staan en maakt vervolgens een h3 (song titel) en een p (artiest naam) aan
+        const songNameAndArtist = document.createElement("div");
+        const titleOfTheSong = document.createElement("h3");
+        const nameOfTheArtist = document.createElement("p");
+
+        // Maakt de afbeelding aan, voedt een classnaam toe en voegt de src en alt toe
+        const songCoverImg = document.createElement("img");
+        songCoverImg.classList.add("songCover");
+        songCoverImg.src = albumCoverUrl;
+        songCoverImg.alt = "song cover";
+
+        // Zorgt ervoor dat de song titel en de artiest naam de juiste waarde krijgen
+        titleOfTheSong.textContent = songName;
+        nameOfTheArtist.textContent = artistName;
+        
+        // Zorgt ervoor dat de titel van het nummer en de artiest in de div met de classnamen song en songContainer komen
+        songNameAndArtist.appendChild(titleOfTheSong);
+        songNameAndArtist.appendChild(nameOfTheArtist);
+
+        // Zorgt ervoor dat de div met de song titel en de artiest naam in de div met de classnaam songContainer komt en dat de cover er in komt
+        song.appendChild(songNameAndArtist);
+        song.appendChild(songCoverImg);
+
+        // Maakt de div aan die uiteindelijk het popup element wordt en voegt een classnaam toe
+        musicPlayerPopup = document.createElement("div");
+        musicPlayerPopup.classList.add("musicplayerPopup");
+
+        // Maakt de knop aan om de popup te sluiten en voegt een classnaam toe
+        const button = document.createElement("button");
+        button.classList.add("closeMusicPopup");
+        constSVGForButton = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        constSVGForButton.setAttributeNS(null, "width", "2rem");
+        constSVGForButton.setAttributeNS(null, "height", "2rem");
+        constSVGForButton.setAttributeNS(null, "viewBox", "0 0 15 15");
+
+        // Maak het path-element
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttributeNS(null, "fill", "currentColor");
+        path.setAttributeNS(null, "d", "M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27");
+
+        // Maakt de iframe aan en haalt de juiste id op
+        const soundcloudIframe = document.createElement("iframe");
+        soundcloudIframe.src = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${songId}&sharing=false&color=%230e1321&`;
+        
+        // Voeg het path-element toe aan het SVG-element
+        constSVGForButton.appendChild(path);
+        // Voeg het SVG-element toe aan het button-element
+        button.appendChild(constSVGForButton);
+        // Voeg het button-element toe aan de div met de classnaam musicplayerPopup
+        musicPlayerPopup.appendChild(button);
+        // Voegt de soundcloudIframe toe aan de div met de classnaam musicplayerPopup
+        musicPlayerPopup.appendChild(soundcloudIframe);
+
+        // zorgt ervoor dat de title, artiest en afbeelding toe worden gevoegd aan het list item songContainer
+        songContainer.appendChild(song);
+        songContainer.appendChild(musicPlayerPopup);
+
+        // Voegt het list item toe aan de ul met de id songList
+        songList.appendChild(songContainer);        
+    });    
+}
+
+updatePlaylist()
+```
