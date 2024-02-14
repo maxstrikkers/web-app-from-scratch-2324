@@ -7,7 +7,7 @@ Ik wilde met mijn persoonlijke app vooral dingen uitproberen op het gebied van J
 ### Menu
 Ik wilde eerst een menu bar maken die uiteindelijk zou gaan linken naar mijn home pagine, muziek en favorite eten dat menu item zag er als volgd uit. Ik heb uiteindelijk d
 
-HTML:
+#### HTML
 ```
 <input type="checkbox" id="nav-toggle" class="nav-toggle">
 <div class="navBar">
@@ -23,7 +23,8 @@ HTML:
 ```
 
 
-CSS:
+#### CSS:
+```
 .navBar {
     background-color: #333;
     padding: 20px;
@@ -72,8 +73,11 @@ CSS:
         display: block;
     }
 }
+```
 
-JavaScript:
+#### JavaScript:
+```
 `document.querySelector('.nav-toggle').addEventListener('click', function() {
     document.querySelector('.navBar').classList.toggle('change');
 `});
+```
