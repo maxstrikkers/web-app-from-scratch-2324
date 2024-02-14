@@ -219,7 +219,9 @@ Ik wilde gebruik maken van de SoundCloud API om zo mijn favoriete afspeellijst i
 ```
 
 ### JavaScript
-Voor deze JavaScript ben ik eerst een structuurtje gaan maken in HTML over hoe uiteindelijk de list met songs er uit komt te zien
+Voor deze JavaScript ben ik eerst een structuurtje gaan maken in HTML over hoe uiteindelijk de lijst met nummers eruit komt te zien. Ik heb voornamelijk Co-Pilot gebruikt om de JavaScript-syntax kloppend te maken, omdat ik daar nog heel weinig ervaring mee heb.
+
+Hier heb ik geleerd wat een async function is en wat je er allemaal mee kunt doen, vooral met het gebruik van await. Ik was me er ook van bewust dat je met .innerHTML gewoon HTML kunt toevoegen en dan de variabele kunt toewijzen, maar ik vond het leuk om de wat lastigere weg te nemen en een beetje te puzzelen over welk item waar moest worden geplaatst. Ook heb ik de widget (```<iframe>```) van SoundCloud ingeladen, zodat ik elk nummer volledig kon afspelen.
 ```
 async function siteInfo() { //Functie die de JSON file gaat ophalen en waardes gaat veranderen
     const response = await fetch("./files/info.json"); //Maakt de variabele response aan door het JSON bestand te fetchen (en te wachten tot het binnen is doormiddel van await)
@@ -323,3 +325,5 @@ async function updatePlaylist(){
 
 updatePlaylist()
 ```
+
+## Vierde versie (Het managen van de pop-up):
