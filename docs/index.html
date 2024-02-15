@@ -42,18 +42,14 @@
         <section class="musicContainer" id="musicContainer">
             <!-- de selector voor de playlist -->
             <section class="musicSelectorContainer">
-                <h2>Kies een playlist</h2>
-                <input type="radio" id="musicSelectorMinderGrimmig" name="tabs" />
-                <label class="tab" for="musicSelectorMinderGrimmig">Voor de tedere oortjes  &#x1F423;</label>
-                <input type="radio" id="musicSelectorGrimmig" name="tabs" />
-                <label class="tab" for="musicSelectorGrimmig">Grimmig &#128128;</label>
-                <span class="glider"></span>
+                <h3>Kies een playlist</h3>
+                <div class="buttonsContainer">
+                    <button id="grimmigButton" class="playlistSelectorButton active">Grimmig &#128128;</button>
+                    <button id="minderGrimmitButton" class="playlistSelectorButton">Voor de tedere oortjes  &#x1F423;</button>
+                </div>
             </section>
         <!-- De playlist met nummers (Ingeladen via JavaScript) -->
-            <section>
-            <h2 id="playlistName"></h2>
-            <img class="playlistCover" id="playlistCover" src="" alt="playlist cover">
-            <ul id="songList"></ul>
+            <section id ="playlistInfo" class="playlistInfo">
             <div class="waas"></div>
             </section>
         </section>
@@ -63,3 +59,12 @@
     <script src="https://w.soundcloud.com/player/api.js"></script>
 </body>
 </html>
+
+
+                <!-- <section class="musicSelectorContainer">
+                <h2>Kies een playlist</h2>
+                <input type="radio" id="musicSelectorMinderGrimmig" name="tabs" />
+                <label class="tab" for="musicSelectorMinderGrimmig">Voor de tedere oortjes  &#x1F423;</label>
+                <input type="radio" id="musicSelectorGrimmig" name="tabs" />
+                <label class="tab" for="musicSelectorGrimmig">Grimmig &#128128;</label>
+                <span class="glider"></span>

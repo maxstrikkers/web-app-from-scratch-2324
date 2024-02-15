@@ -1,7 +1,7 @@
 { 
     "firstName": "Max",
     "lastName": "Strikkers",
-    "avatar_url": "https://raw.githubusercontent.com/maxstrikkers/web-app-from-scratch-2324/main/docs/files/img/Max%20Strikkers.png",
+    "avatar_url": "https://raw.githubusercontent.com/maxstrikkers/web-app-from-scratch-2324/main/docs/files/img/MaxStrikkers.png",
     "age": 23,
     "city": "Amstelveen",
     "hobbies" : ["Films", "Music"],
